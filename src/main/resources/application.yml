@@ -1,0 +1,32 @@
+server:
+  port: 8086
+
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/studentmanager?useUnicode=true&characterEncoding=utf-8&useSSL=true
+    username: root
+    password: 123456
+
+
+#模板配置
+  thymeleaf:
+    cache: false
+    prefix: classpath:/static/
+    suffix: .html
+    encoding: utf-8
+    mode: LEGACYHTML5
+
+
+  jpa:
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      ddl-auto: update
+    show-sql: true
+
+  mvc:
+    view:
+      prefix: classpath:/   # 定位模板的目录
+      suffix: .html     # 给返回的页面添加后缀名
